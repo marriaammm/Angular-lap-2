@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { ProductService,Product } from '../../../services/product.service';
+import { Product } from '../../../services/product.service';
 import { RouterLink } from '@angular/router';
 
 
