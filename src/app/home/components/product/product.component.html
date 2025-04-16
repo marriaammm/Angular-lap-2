@@ -1,0 +1,13 @@
+<div class="product-container">
+    <h2>Our Products</h2>
+    <div class="product-list">
+        <div class="product-card" *ngFor="let product of products">
+            <div class="image-wrapper">
+                <img [src]="product.image" alt="{{ product.productName }}" />
+            </div>
+            <h3>{{ product.productName }}</h3>
+            <p>On Sale: {{ product.onSale ? 'Yes' : 'No' }}</p>
+            <span>{{ product.productPrice }} EGP</span>
+        </div>
+    </div>
+</div>
