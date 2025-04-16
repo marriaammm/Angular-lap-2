@@ -1,0 +1,26 @@
+<div class="products-page">
+
+    <section class="featured-section">
+        <h2>Top Jewelry</h2>
+        <div class="products-grid">
+            @for (product of jewelryProducts; track product.id) {
+            <app-product-card [product]="product"></app-product-card>
+            }
+        </div>
+    </section>
+    <section class="all-products">
+        <h2>All Products</h2>
+        @defer (on viewport) {
+        <div class="products-grid">
+            @for (product of products; track product.id) {
+            <app-product-card [product]="product"></app-product-card>
+            }
+        </div>
+        } @placeholder {
+        <div class="loading-placeholder">Loading products...</div>
+        } @loading {
+        <div class="loading-spinner">Loading...</div>
+        }
+    </section>
+
+</div>

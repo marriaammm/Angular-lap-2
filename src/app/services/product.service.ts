@@ -13,6 +13,12 @@ export interface Product {
   rating: Rating;
   onSale: boolean;
 }
+export interface Category {
+  name: string;
+  image: string;
+  description: string;
+  route: string;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -286,6 +292,31 @@ export class ProductService {
   getProductById(id: number): Product | undefined {
     return this.products.find(product => product.id === id);
   }
-  
+  getJewelryProducts(): Product[] {
+    return this.products.filter(product => product.category === 'jewelery');
+  }
+  getOnSaleProducts(): Product[] {
+    return this.products.filter(product => product.onSale);
+  }
   constructor() { }
+getProductCategories(): Category[] {
+  const uniqueCategories = [...new Set(this.products.map(p => p.category))];
+  
+  return uniqueCategories.map(category => {
+    const sampleProduct = this.products.find(p => p.category === category);
+    
+    return {
+      name: this.formatCategoryName(category),
+      image: sampleProduct?.image || 'assets/default-category.jpg',
+      description: `Shop our ${this.formatCategoryName(category)} collection`,
+      route: `/products/category/${category.toLowerCase().replace(/\s+/g, '-')}`
+    };
+  });
+}
+
+private formatCategoryName(category: string): string {
+  return category.split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
 }

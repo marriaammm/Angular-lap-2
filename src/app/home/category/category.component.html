@@ -1,0 +1,17 @@
+<div class="category-container">
+    <h2>Shop by Category</h2>
+    <div class="category-list">
+        @for (category of categories; track category.name) {
+        <a [routerLink]="category.route" class="category-card">
+            <div class="image-wrapper">
+                <img [src]="category.image" [alt]="category.name">
+            </div>
+            <div class="category-content">
+                <h3>{{ category.name }}</h3>
+                <p>{{ category.description }}</p>
+                <span class="shop-link">Shop Now →</span>
+            </div>
+        </a>
+        }
+    </div>
+</div>

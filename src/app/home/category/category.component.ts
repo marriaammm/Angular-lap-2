@@ -1,17 +1,14 @@
+// category.component.ts
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-
-export interface Category {
-  name: string;
-  image: string;
-  description: string;
-}
+import { RouterModule } from '@angular/router';
+import { Category } from '../../services/product.service';
 @Component({
   selector: 'app-category',
-  imports: [CommonModule],
   standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './category.component.html',
-  styleUrl: './category.component.css'
+  styleUrls: ['./category.component.css']
 })
 export class CategoryComponent {
   @Input() categories: Category[] = [];

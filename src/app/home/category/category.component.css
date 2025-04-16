@@ -1,0 +1,94 @@
+/* category.component.css */
+.category-container {
+    background-color: #f9f9f9;
+    padding: 3rem 0;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.category-container h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #333;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+.category-container h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #4a90e2;
+    margin: 0.5rem auto 0;
+}
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.category-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.image-wrapper {
+    height: 180px;
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.category-card:hover .image-wrapper img {
+    transform: scale(1.05);
+}
+
+.category-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.category-content h3 {
+    margin: 0 0 0.5rem;
+    color: #222;
+    font-size: 1.2rem;
+}
+
+.category-content p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.shop-link {
+    color: #4a90e2;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .shop-link {
+    transform: translateX(5px);
+}
