@@ -18,7 +18,6 @@ constructor(private productService: ProductService) {}
 
 ngOnInit(): void {
   this.jewelryProducts = this.productService.getJewelryProducts();
-  this.onSaleProducts = this.productService.getOnSaleProducts();
   this.products = this.productService.getProducts();
 }
 
